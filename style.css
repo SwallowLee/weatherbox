@@ -1,0 +1,280 @@
+*{
+	position: relative;
+}
+html, body{
+	height: 100%; width: 100%;
+	margin: 0px;
+	padding: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+body{
+	background-color: #84857F;
+}
+.box{
+	height: 400px; width: 420px;
+	cursor: pointer;
+	overflow: hidden;
+}
+.top{
+	z-index: -2;
+	height: 300px;	width: 420px;
+	background: linear-gradient(to top right, #02091C, #0B2E8C);
+	background-size: 100% 300%;
+	animation: light 30s infinite linear;
+	animation-direction: alternate;
+	border-radius: 5px 5px 0px 0px;
+	border: solid 2px rgba(0,0,0,0.7);
+}
+@keyframes light{
+	0%{
+		background-position: 100% 30%;
+	}
+	100%{
+		background-position: 100% 100%;
+	}
+}
+.words{
+	position: absolute;
+	height: 140px; width: 150px;
+	left: 20px;
+	bottom: 30px;
+	color: #E3E3E3;
+}
+.temp{
+	font-size: 50px;
+}
+.location{
+	font-size: 15px;
+	letter-spacing: 1px;
+}
+.date{
+	font-size: 22px;
+	letter-spacing: 1px;
+	line-height: 30px;
+}
+.time{
+	font-size: 30px;
+	line-height: 0px;
+	top: -10px;
+}
+.top .cloud{
+	position: absolute;
+	height: 50px; width: 100px;
+	right: 70px; bottom: 50px;
+	border-radius: 100px;
+	background-color: #E3E3E3;
+	animation: cloud 2s infinite linear;
+	animation-direction: alternate;
+	transition-duration: 1s;
+}
+.one, .two{
+	height: 50px; width: 50px;
+	border-radius: 100%;
+	background-color: #E3E3E3;
+}
+.one{
+	position: absolute;
+	right: 10px;
+	top: -20px;
+}
+.two{
+	position: absolute;
+	left: 15px;
+	top: -20px;
+}
+@keyframes cloud{
+	0%{
+		transform: translateY(-5px);
+	}
+	100%{
+		transform: translateY(5px);
+	}
+}
+.rain1{
+	position: absolute;
+	height: 15px; width: 3px;
+	border-radius: 100px;
+	left: 30px;
+	bottom: 5px;
+	animation: rain 1s infinite linear;
+	transition-duration: 1s;
+	background-color: #E3E3E3;
+}
+.rain2{
+	position: absolute;
+	height: 15px; width: 3px;
+	border-radius: 100px;
+	left: 50px;
+	bottom: 5px;
+	animation: rain 1s infinite linear;
+	animation-delay: -0.2s;
+	transition-duration: 1s;
+	background-color: #E3E3E3;
+}
+.rain3{
+	position: absolute;
+	height: 15px; width: 3px;
+	border-radius: 100px;
+	left: 70px;
+	bottom: 5px;
+	animation: rain 1s infinite linear;
+	animation-delay: -0.7s;
+	transition-duration: 1s;
+	background-color: #E3E3E3;
+}
+@keyframes rain{
+	0%{
+		transform: translateY(0px);
+		opacity: 1;
+	}
+	100%{
+		transform: translateY(40px);
+		opacity: 0;
+	}
+}
+.moon{
+	position: absolute;
+	top: 90px;
+	left: 20px;
+	height: 60px; width: 60px;
+	border-radius: 100%;
+	background-color: #071E5E;
+	z-index: -1;
+	animation: moon 50s infinite linear;
+	animation-direction: alternate;
+	transition-duration: 1s;
+}
+@keyframes moon{
+	0%{
+		transform: translate(-40px, 40px);
+		box-shadow: 40px -40px #FCFC08;
+	}
+	100%{
+		transform: translate(40px, -40px);
+		box-shadow: -40px 40px #FCFC08;
+	}
+}
+.line{
+	transition-duration: 2s;
+	opacity: 0.2;
+}
+.line circle{
+	fill: #E3E3E3;
+}
+.line polyline{
+	fill:none;
+	stroke: #E3E3E3;
+	transition-duration: 1s;
+}
+.line text{
+	fill:#E3E3E3;
+	font-size: 10px;
+}
+
+.bottom{
+	position: absolute;
+	top: 300px;
+	height: 10px;
+	display: flex;
+	justify-content: center;
+	transition-delay: 0.4s;
+	transition-duration: 1s;
+	background-color: #E3E3E3;
+	border-radius: 0px 0px 5px 5px;
+	border: solid 2px rgba(0,0,0,0.7);
+}
+.box:hover .bottom{
+	height: 100px;
+}
+.dayweather{
+	top: 5px;
+	display: inline-block;
+	width: calc(100% / 7 - 5px);
+	padding: 2px;
+	margin-top: 5px;
+	opacity: 0;
+	transition-duration: 1s;
+}
+.box:hover .dayweather:nth-child(1){
+	transition-delay: 1s;
+	top: 0px;
+	opacity: 1;
+}
+.box:hover .dayweather:nth-child(2){
+	transition-delay: 1.2s;
+	top: 0px;
+	opacity: 1;
+}
+.box:hover .dayweather:nth-child(3){
+	transition-delay: 1.4s;
+	top: 0px;
+	opacity: 1;
+}
+.box:hover .dayweather:nth-child(4){
+	transition-delay: 1.6s;
+	top: 0px;
+	opacity: 1;
+}
+.box:hover .dayweather:nth-child(5){
+	transition-delay: 1.8s;
+	top: 0px;
+	opacity: 1;
+}
+.box:hover .dayweather:nth-child(6){
+	transition-delay: 2s;
+	top: 0px;
+	opacity: 1;
+}
+.box:hover .dayweather:nth-child(7){
+	transition-delay: 2.2s;
+	top: 0px;
+	opacity: 1;
+}
+.dayweather svg{
+	width: 100%;
+	height: 40px;
+}
+.dayweather p{
+	font-size: 12px;
+	text-align: center;
+}
+.sun{
+	stroke: #EDF514;
+	fill: #EDF514;
+	stroke-width: 30px;
+	stroke-dasharray: 3px;
+}
+.cloud, .rain{
+	fill: #8A8A88;
+}
+.dayweather .rain1,.dayweather .rain2,.dayweather .rain3{
+	stroke: black;
+	stroke-width: 5px;
+	stroke-linecap: round;
+}
+label{
+	cursor: pointer;
+}
+#show{
+	display: none;
+}
+#show:checked + .top .moon{
+	opacity: 0.2;
+}
+#show:checked + .top .cloud{
+	opacity: 0.2;
+}
+#show:checked + .top .rain1{
+	opacity: 0.2;
+}
+#show:checked + .top .rain2{
+	opacity: 0.2;
+}
+#show:checked + .top .rain3{
+	opacity: 0.2;
+}
+#show:checked + .top .line{
+	opacity: 1;
+}
